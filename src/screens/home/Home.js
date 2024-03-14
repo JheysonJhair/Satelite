@@ -104,8 +104,8 @@ export default function Home() {
         {selectedLocation && (
           <Marker coordinate={selectedLocation}>
             <Image
-              source={require("../../assets/fuego.png")} // Ruta de tu imagen
-              style={{ width: 30, height: 34 }} // Ajusta el tamaño según tus necesidades
+              source={require("../../assets/fuego.png")} 
+              style={{ width: 30, height: 34 }} 
             />
           </Marker>
         )}
