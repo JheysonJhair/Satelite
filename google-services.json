@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "569538688447",
+    "project_id": "satelite-ce380",
+    "storage_bucket": "satelite-ce380.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569538688447:android:2913402379dfedcfec1d0a",
+        "android_client_info": {
+          "package_name": "com.jhair.Satelite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcoSLlXHY6CzJ7btH5-zrOW-7AmyU4xII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

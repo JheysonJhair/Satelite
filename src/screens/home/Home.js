@@ -5,6 +5,7 @@ import MapView, { Marker } from "react-native-maps";
 
 import { fetchFireLocations } from "../../api/apiFire";
 import StatusModal from "../../components/modals/StatusModal";
+import { enviarNotificacion } from '../../api/apiFire';
 
 export default function Home() {
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -54,6 +55,7 @@ export default function Home() {
         setModalVisible(true);
         setText("Proceso terminado con éxito");
         setText2("La simulación de incendio ha sido completada correctamente.");
+        enviarNotificacion();
       } else {
         setModalStatus("error");
         setModalVisible(true);
