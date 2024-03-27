@@ -31,11 +31,11 @@ export const enviarNotificacion = async () => {
   const body = {
     to: "/topics/test",
     notification: {
-      body: "jueanito cloud body",
-      title: "eaxaswerick",
-      subtitle: "erasesubtitle",
+      body: "Se ha detectado un incendio en las cercanías de tu ubicación. Por favor, mantente seguro y sigue las instrucciones de las autoridades locales.",
+      title: "¡Alerta de Incendio!",
+      subtitle: "¡Toma precauciones!",
       image:
-        "https://images.freeimages.com/images/large-previews/e4f/un-fueguito-little-fire-1190570.jpg",
+        "https://play-lh.googleusercontent.com/gHcL0pfXe-nSS7WH04J71AqbtmmREChZZ6pZXKF7HHAmzv_8Z3kPhaaczfjNw0AheuAa",
     },
   };
   const headers = {
@@ -51,7 +51,6 @@ export const enviarNotificacion = async () => {
       body: JSON.stringify(body),
     });
     const data = await response.json();
-    console.log("Respuesta de FCM:", data);
     return data;
   } catch (error) {
     console.error("Error al enviar la notificación:", error);
