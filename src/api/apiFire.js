@@ -31,7 +31,7 @@ export const enviarNotificacion = async () => {
   const body = {
     to: "/topics/test",
     notification: {
-      body: "Se ha detectado un incendio en las cercanías de tu ubicación. Por favor, mantente seguro y sigue las instrucciones de las autoridades locales.",
+      body: "Se ha detectado un incendio, toma tus precauciones.",
       title: "¡Alerta de Incendio!",
       subtitle: "¡Toma precauciones!",
       image:
