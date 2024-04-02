@@ -50,12 +50,14 @@ export default function Home() {
         longitude,
         temperature
       );
-      if (response == "termino") {
+      if (response === "termino") {
         setModalStatus("success");
         setModalVisible(true);
         setText("Proceso terminado con éxito");
         setText2("La simulación de incendio ha sido completada correctamente.");
-        enviarNotificacion();
+
+        const direccionExacta = await obtenerDireccionExacta(latitude, longitude);
+        await enviarNotificacion(direccionExacta);
       } else {
         setModalStatus("error");
         setModalVisible(true);
@@ -75,6 +77,25 @@ export default function Home() {
       setText2(
         "Hubo un problema al enviar la solicitud. Por favor, verifica tu conexión e inténtalo de nuevo."
       );
+    }
+  };
+
+  const obtenerDireccionExacta = async (latitude, longitude) => {
+    const apiKey = 'AIzaSyAzjcbLSKk0Bh881pDOETrB1erl1zIjQds';
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
+    
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (data.status === 'OK') {
+        return data.results[0].formatted_address;
+      } else {
+        throw new Error('Error al obtener la dirección');
+      }
+    } catch (error) {
+      console.error('Error al obtener la dirección:', error);
+      throw error;
     }
   };
 

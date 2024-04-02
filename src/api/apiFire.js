@@ -26,16 +26,16 @@ export const fetchFireLocations = async (latitude, longitude, temperature) => {
   }
 };
 
-export const enviarNotificacion = async () => {
+export const enviarNotificacion = async (ubicacionExacta) => {
   const url = "https://fcm.googleapis.com/fcm/send";
   const body = {
     to: "/topics/test",
     notification: {
-      body: "Se ha detectado un incendio, toma tus precauciones.",
+      body: ` ${ubicacionExacta} ¡Toma precauciones!`,
       title: "¡Alerta de Incendio!",
       subtitle: "¡Toma precauciones!",
       image:
-        "https://play-lh.googleusercontent.com/gHcL0pfXe-nSS7WH04J71AqbtmmREChZZ6pZXKF7HHAmzv_8Z3kPhaaczfjNw0AheuAa",
+        "https://static.vecteezy.com/system/resources/previews/001/188/566/original/fire-png.png",
     },
   };
   const headers = {
